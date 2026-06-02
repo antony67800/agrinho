@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(41, 160, 28);
+}
+
+p {
+    color: rgb(41, 160, 28);
+}
+img {
+    width: 300px; /* tamanho da imagem */
+    margin-top: 20px;
+}
+.logo-centro {
+    width: 300px;
+}
+
+.logo-direita {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 120px;
+}
