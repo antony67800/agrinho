@@ -13,12 +13,11 @@ h1 {
 p {
     color: rgb(41, 160, 28);
 }
-img {
-    width: 300px; /* tamanho da imagem */
-    margin-top: 20px;
-}
+
 .logo-centro {
-    width: 300px;
+    width: 120px;
+    display: block;
+    margin: 20px auto;
 }
 
 .logo-direita {
@@ -26,4 +25,59 @@ img {
     top: 10px;
     right: 10px;
     width: 120px;
+}
+
+.botao-saiba-mais {
+    background-color: rgb(41, 160, 28);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.botao-saiba-mais:hover {
+    background-color: rgb(32, 124, 20);
+}
+
+.container-secoes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.secao-detalhes {
+    display: none;
+    width: 350px;
+    min-height: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.secao-detalhes.aberto {
+    display: block;
+}
+
+.secao-detalhes h2 {
+    color: rgb(41, 160, 28);
+}
+
+.secao-detalhes p {
+    color: white;
+    line-height: 1.6;
+}
+.botao-saiba-mais {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-saiba-mais:hover {
+    transform: scale(1.05);
 }

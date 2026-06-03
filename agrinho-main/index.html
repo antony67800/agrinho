@@ -1,22 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-br"
->
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>    
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projeto Agrinho</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <img src="logo-agrinho.png" alt="Logo Agrinho" class="logo-centro">
     <img src="logo-agrinho.png" alt="Logo Agrinho" class="logo-direita">
 
-    <h1>Projeto Agrinho</h1>
-    <p>Equilíbrio De Fabricação e Sustentabilidade</p>
+    <h1>Equilíbrio Entre Produção e Meio Ambiente</h1>
+    <p>Projeto Agrinho</p>
+
+    <div>
+    <button id="btn-leia-mais" class="botao-saiba-mais">
+        O QUE É?
+    </button>
+
+    <button id="btn-equilibrio" class="botao-saiba-mais">
+        COMO ALCANÇAR?
+    </button>
+</div>
+
+    <div style="margin-top: 15px;">
+    <button id="btn-exemplos" class="botao-saiba-mais">
+        EXEMPLOS
+    </button>
+    </div>
+
+    <div class="container-secoes">
+
+        <section id="mais-detalhes" class="secao-detalhes">
+            <h2>O QUE É EQUILÍBRIO ENTRE PRODUÇÃO E MEIO AMBIENTE?</h2>
+
+            <p>
+                Isso significa produzir de forma responsável, unindo tecnologia
+                e cuidado com o meio ambiente para gerar bens úteis sem
+                prejudicar a natureza.
+            </p>
+
+            <p>
+                Além de proteger a natureza, a sustentabilidade também envolve
+                oferecer boas condições de trabalho e buscar soluções que
+                beneficiem a economia. Dessa forma, é possível atender às
+                necessidades atuais da população sem comprometer os recursos
+                das futuras gerações.
+            </p>
+        </section>
+
+        <section id="como-alcancar" class="secao-detalhes">
+            <h2>COMO ALCANÇAR O EQUILÍBRIO ENTRE PRODUÇÃO E MEIO AMBIENTE?</h2>
+
+            <p>
+                O equilíbrio pode ser alcançado utilizando tecnologias mais
+                limpas, reduzindo desperdícios e aproveitando melhor os
+                recursos naturais.
+            </p>
+
+            <p>
+                Empresas e produtores podem reciclar materiais, economizar
+                água e energia, controlar a emissão de poluentes e investir
+                em fontes renováveis.
+            </p>
+
+            <p>
+                Dessa forma, é possível produzir o que a sociedade necessita
+                sem causar grandes impactos ao meio ambiente.
+            </p>
+        </section>
+        <section id="exemplos" class="secao-detalhes">
+    <h2>EXEMPLOS DE EQUILÍBRIO ENTRE PRODUÇÃO E MEIO AMBIENTE</h2>
+
+            <p>🌱 Agricultura sustentável utilizando menos agrotóxicos.</p>
+
+            <p>♻️ Fábricas que reciclam resíduos para produzir novos produtos.</p>
+
+            <p>☀️ Empresas que utilizam energia solar e eólica.</p>
+
+           <p>💧 Sistemas de reaproveitamento da água da chuva.</p>
+
+           <p>🚲 Incentivo ao uso de bicicletas e transportes menos poluentes.</p>
+      </section>
+    </div>
+
+    <script>
+        const botao = document.getElementById('btn-leia-mais');
+        const detalhes = document.getElementById('mais-detalhes');
+
+        botao.addEventListener('click', () => {
+            const aberto = detalhes.classList.toggle('aberto');
+            botao.textContent = aberto ? 'Mostrar menos' : 'O QUE É?';
+        });
+
+        const botaoEquilibrio = document.getElementById('btn-equilibrio');
+        const comoAlcancar = document.getElementById('como-alcancar');
+
+        botaoEquilibrio.addEventListener('click', () => {
+            const aberto = comoAlcancar.classList.toggle('aberto');
+            botaoEquilibrio.textContent = aberto ? 'Mostrar menos' : 'COMO ALCANÇAR?';
+        });
+        const botaoExemplos = document.getElementById('btn-exemplos');
+const exemplos = document.getElementById('exemplos');
+
+botaoExemplos.addEventListener('click', () => {
+    const aberto = exemplos.classList.toggle('aberto');
+    botaoExemplos.textContent = aberto ? 'Mostrar menos' : 'EXEMPLOS';
+        });
+    </script>
+
 </body>
 </html>
-
-
