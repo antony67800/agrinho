@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #081c15;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,9 +22,11 @@ p {
 
 .logo-direita {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 120px;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: auto;
+    opacity: 50%;
 }
 
 .botao-saiba-mais {
@@ -53,13 +55,14 @@ p {
 
 .secao-detalhes {
     display: none;
-    width: 350px;
-    min-height: 300px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
+    width: 380px;
+    min-height: 320px;
+    padding: 25px;
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
     text-align: left;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 .secao-detalhes.aberto {
@@ -71,7 +74,7 @@ p {
 }
 
 .secao-detalhes p {
-    color: white;
+    color: rgb(41, 160, 28);
     line-height: 1.6;
 }
 .botao-saiba-mais {
@@ -80,4 +83,53 @@ p {
 
 .botao-saiba-mais:hover {
     transform: scale(1.05);
+}
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.carrossel img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.carrossel img:hover {
+    transform: scale(1.05);
+}
+
+.carrossel::-webkit-scrollbar {
+    height: 10px;
+}
+
+.carrossel::-webkit-scrollbar-thumb {
+    background: rgb(41, 160, 28);
+    border-radius: 10px;
+}
+.conclusao {
+    max-width: 10000px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: justify;
+}
+
+.conclusao h2 {
+    color: rgb(41, 160, 28);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.conclusao p {
+    color: white;
+    font-size: 26px;
+    line-height: 2;
+    text-align: justify;
 }
