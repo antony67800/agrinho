@@ -133,3 +133,34 @@ p {
     line-height: 2;
     text-align: justify;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-conteudo {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 85%;
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.carrossel img {
+    cursor: pointer;
+}
