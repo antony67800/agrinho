@@ -1,65 +1,99 @@
 const botao = document.getElementById('btn-leia-mais');
-const detalhes = document.getElementById('mais-detalhes');
-
-botao.addEventListener('click', () => {
-    const aberto = detalhes.classList.toggle('aberto');
-    botao.textContent = aberto ? 'Mostrar menos' : 'O QUE É?';
-});
-
 const botaoEquilibrio = document.getElementById('btn-equilibrio');
-const comoAlcancar = document.getElementById('como-alcancar');
-
-botaoEquilibrio.addEventListener('click', () => {
-    const aberto = comoAlcancar.classList.toggle('aberto');
-    botaoEquilibrio.textContent =
-        aberto ? 'Mostrar menos' : 'COMO ALCANÇAR?';
-});
-
 const botaoExemplos = document.getElementById('btn-exemplos');
+
+const detalhes = document.getElementById('mais-detalhes');
+const comoAlcancar = document.getElementById('como-alcancar');
 const exemplos = document.getElementById('exemplos');
 
-botaoExemplos.addEventListener('click', () => {
-    const aberto = exemplos.classList.toggle('aberto');
-    botaoExemplos.textContent =
-        aberto ? 'Mostrar menos' : 'EXEMPLOS';
-});
+// Botão O QUE É?
+botao.addEventListener('click', () => {
 
-function irParaConclusao() {
-    document.getElementById('conclusao').scrollIntoView({
-        behavior: 'smooth'
-    });
-}
+    const abrir = !detalhes.classList.contains('aberto');
 
-const modal = document.getElementById("imagem-ampliada");
-const modalImg = document.getElementById("img-ampliada");
-const imagens = document.querySelectorAll(".carrossel img");
-const fechar = document.querySelector(".fechar");
+    detalhes.classList.remove('aberto');
+    comoAlcancar.classList.remove('aberto');
+    exemplos.classList.remove('aberto');
 
-imagens.forEach(img => {
-    img.addEventListener("click", () => {
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-    });
-});
+    botao.textContent = 'O QUE É?';
+    botaoEquilibrio.textContent = 'COMO ALCANÇAR?';
+    botaoExemplos.textContent = 'EXEMPLOS';
 
-fechar.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
+    if (abrir) {
+        detalhes.classList.add('aberto');
+        botao.textContent = 'Mostrar menos';
     }
 });
+
+// Botão COMO ALCANÇAR?
+botaoEquilibrio.addEventListener('click', () => {
+
+    const abrir = !comoAlcancar.classList.contains('aberto');
+
+    detalhes.classList.remove('aberto');
+    comoAlcancar.classList.remove('aberto');
+    exemplos.classList.remove('aberto');
+
+    botao.textContent = 'O QUE É?';
+    botaoEquilibrio.textContent = 'COMO ALCANÇAR?';
+    botaoExemplos.textContent = 'EXEMPLOS';
+
+    if (abrir) {
+        comoAlcancar.classList.add('aberto');
+        botaoEquilibrio.textContent = 'Mostrar menos';
+    }
+});
+
+// Botão EXEMPLOS
+botaoExemplos.addEventListener('click', () => {
+
+    const abrir = !exemplos.classList.contains('aberto');
+
+    detalhes.classList.remove('aberto');
+    comoAlcancar.classList.remove('aberto');
+    exemplos.classList.remove('aberto');
+
+    botao.textContent = 'O QUE É?';
+    botaoEquilibrio.textContent = 'COMO ALCANÇAR?';
+    botaoExemplos.textContent = 'EXEMPLOS';
+
+    if (abrir) {
+        exemplos.classList.add('aberto');
+        botaoExemplos.textContent = 'Mostrar menos';
+    }
+});
+// Botao MODO ACESSÍVEL
+// Botão de acessibilidade
 const btnAcessibilidade = document.getElementById("btn-acessibilidade");
 
-btnAcessibilidade.addEventListener("click", () => {
-    document.body.classList.toggle("acessivel");
+if (btnAcessibilidade) {
+    btnAcessibilidade.addEventListener("click", () => {
+        document.body.classList.toggle("acessivel");
+    });
+}
+// Modal das imagens
+const modal = document.getElementById("imagem-ampliada");
+const modalImg = document.getElementById("img-ampliada");
+const imagens = document.querySelectorAll(".carrossel-infinito img");
+const fechar = document.querySelector(".fechar");
 
-    if (document.body.classList.contains("acessivel")) {
-        btnAcessibilidade.textContent = "MODO NORMAL";
-    } else {
-        btnAcessibilidade.textContent = "MODO ACESSÍVEL";
-    }
+if (modal && modalImg && fechar) {
+
+    imagens.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
 });
+    });
+
+    fechar.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}

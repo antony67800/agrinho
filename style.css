@@ -84,34 +84,39 @@ p {
 .botao-saiba-mais:hover {
     transform: scale(1.05);
 }
-.carrossel {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 20px;
-    scroll-behavior: smooth;
+.carrossel-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0;
 }
 
-.carrossel img {
+.carrossel-infinito {
+    display: flex;
+    width: max-content;
+    animation: deslizar 25s linear infinite;
+}
+
+.carrossel-infinito img {
     width: 300px;
     height: 200px;
     object-fit: cover;
+    margin-right: 15px;
     border-radius: 10px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.carrossel img:hover {
+.carrossel-infinito img:hover {
     transform: scale(1.05);
 }
 
-.carrossel::-webkit-scrollbar {
-    height: 10px;
-}
-
-.carrossel::-webkit-scrollbar-thumb {
-    background: rgb(41, 160, 28);
-    border-radius: 10px;
+@keyframes deslizar {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 .conclusao {
     max-width: 10000px;
@@ -224,7 +229,7 @@ p {
         min-height: auto;
     }
 
-    .carrossel img {
+    .carrossel-infinito {
         width: 250px;
         height: 170px;
     }
