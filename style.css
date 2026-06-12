@@ -20,14 +20,6 @@ p {
     margin: 20px auto;
 }
 
-.logo-direita {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: auto;
-    opacity: 50%;
-}
 
 .botao-saiba-mais {
     background-color: rgb(41, 160, 28);
@@ -205,9 +197,7 @@ p {
 /* Responsividade para celulares */
 @media (max-width: 768px) {
 
-    .logo-direita {
-        width: 120px;
-    }
+    
 
     h1 {
         font-size: 28px;
