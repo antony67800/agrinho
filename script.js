@@ -52,3 +52,14 @@ modal.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+const btnAcessibilidade = document.getElementById("btn-acessibilidade");
+
+btnAcessibilidade.addEventListener("click", () => {
+    document.body.classList.toggle("acessivel");
+
+    if (document.body.classList.contains("acessivel")) {
+        btnAcessibilidade.textContent = "MODO NORMAL";
+    } else {
+        btnAcessibilidade.textContent = "MODO ACESSÍVEL";
+    }
+});
